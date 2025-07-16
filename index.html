@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plan Nutricional - Leticia Díaz</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="header-content">
+                <h1>Plan Nutricional</h1>
+                <p>Paciente: Leticia Díaz</p>
+                <div class="header-info">
+                    <div class="header-info-item">
+                        <strong>Calorías diarias:</strong> 1,600 kcal
+                    </div>
+                    <div class="header-info-item">
+                        <strong>Carbohidratos:</strong> 40% (160g)
+                    </div>
+                    <div class="header-info-item">
+                        <strong>Proteínas:</strong> 30% (120g)
+                    </div>
+                    <div class="header-info-item">
+                        <strong>Grasas:</strong> 30% (53g)
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation Tabs -->
+        <div class="tabs">
+            <div class="tab active" onclick="showSection('calendar')">Calendario Semanal</div>
+            <div class="tab" onclick="showSection('alternatives')">Alternativas</div>
+            <div class="tab" onclick="showSection('stats')">Estadísticas</div>
+            <div class="tab" onclick="showSection('portions')">Guía de Porciones</div>
+        </div>
+
+        <!-- Calendar Section -->
+        <div id="calendar" class="content-section active">
+            <div class="calendar-grid" id="calendarGrid">
+                <!-- Dynamic content will be inserted here -->
+            </div>
+        </div>
+
+        <!-- Alternatives Section -->
+        <div id="alternatives" class="content-section">
+            <h2 style="margin-bottom: 20px; color: var(--primary-color);">Tabla de Equivalencias - Alternativas de Bajo Costo</h2>
+            
+            <!-- Equivalencias de Proteínas -->
+            <div style="background: white; padding: 25px; border-radius: 15px; margin-bottom: 20px; box-shadow: var(--shadow);">
+                <h3 style="color: var(--protein-color); margin-bottom: 15px;">🥩 Equivalencias de Proteínas</h3>
+                <p style="color: var(--text-light); margin-bottom: 15px;">Porciones equivalentes a 100g de pollo/pescado (≈30g proteína)</p>
+                <div class="alternatives-grid">
+                    <div class="alternative-card" style="background: #FFF5F5;">
+                        <div class="alternative-header" style="font-size: 1rem;">En lugar de 100g pollo, usa:</div>
+                        <div class="alternative-item">
+                            <span class="alternative-name">🥚 Huevos enteros</span>
+                            <span class="alternative-info"><strong>3 unidades grandes</strong> (150g)</span>
+                        </div>
+                        <div class="alternative-item">
+                            <span class="alternative-name">🫘 Frijoles negros cocidos</span>
+                            <span class="alternative-info"><strong>1½ tazas</strong> (340g)</span>
+                        </div>
+                        <div class="alternative-item">
+                            <span class="alternative-name">🍛 Lentejas cocidas</span>
+                            <span class="alternative-info"><strong>1⅓ tazas</strong> (300g)</span>
+                        </div>
+                        <div class="alternative-item">
+                            <span class="alternative-name">🐟 Sardinas en agua</span>
+                            <span class="alternative-info"><strong>1 lata grande</strong> (120g)</span>
+                        </div>
+                        <div class="alternative-item">
+                            <span class="alternative-name">🧀 Queso fresco</span>
+                            <span class="alternative-info"><strong>120g</strong> (4 rebanadas)</span>
+                        </div>
+                        <div class="alternative-item">
+                            <span class="alternative-name">🥜 Mantequilla de maní</span>
+                            <span class="alternative-info"><strong>4 cucharadas</strong> (60g)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Equivalencias de Carbohidratos -->
+            <div style="background: white; padding: 25px; border-radius: 15px; margin-bottom: 20px; box-shadow: var(--shadow);">
+                <h3 style="color: var(--carbs-color); margin-bottom: 15px;">🌾 Equivalencias de Carbohidratos</h3>
+                <p style="color: var(--text-light); margin-bottom: 15px;">Porciones equivalentes a ½ taza de arroz cocido (≈30g carbohidratos)</p>
+                <div class="alternatives-grid">
+                    <div class="alternative-card" style="background: #FFF9F0;">
+                        <div class="alternative-header" style="font-size: 1rem;">En lugar de ½ taza arroz, usa:</div>
+                        <div class="alternative-item">
+                            <span class="alternative-name">🥔 Papa cocida</span>
+                            <span class="alternative-info"><strong>1 unidad mediana</strong> (150g)</span>
+                        </div>
+                        <div class="alternative-item">
+                            <span class="alternative-name">🍠 Camote/Batata</span>
+                            <span class="alternative-info"><strong>½ unidad grande</strong> (130g)</span>
+                        </div>
+                        <div class="alternative-item">
+                            <span class="alternative-name">🌽 Yuca cocida</span>
+                            <span class="alternative-info"><strong>⅓ taza</strong> (80g)</span>
+                        </div>
+                        <div class="alternative-item">
+                            <span class="alternative-name">🥣 Avena cocida</span>
+                            <span class="alternative-info"><strong>¾ taza</strong> (180g)</span>
+                        </div>
+                        <div class="alternative-item">
+                            <span class="alternative-name">🌮 Tortillas de maíz</span>
+                            <span class="alternative-info"><strong>2 unidades</strong> (60g)</span>
+                        </div>
+                        <div class="alternative-item">
+                            <span class="alternative-name">🍌 Plátano verde cocido</span>
+                            <span class="alternative-info"><strong>½ unidad</strong> (100g)</span>
+                        </div>
+                        <div class="alternative-item">
+                            <span class="alternative-name">🍞 Pan integral</span>
+                            <span class="alternative-info"><strong>1½ rebanadas</strong> (45g)</span>
+                        </div>
+                        <div class="alternative-item">
+                            <span class="alternative-name">🥣 Frijoles cocidos</span>
+                            <span class="alternative-info"><strong>½ taza</strong> (120g)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Equivalencias de Grasas -->
+            <div style="background: white; padding: 25px; border-radius: 15px; margin-bottom: 20px; box-shadow: var(--shadow);">
+                <h3 style="color: var(--fats-color); margin-bottom: 15px;">🥑 Equivalencias de Grasas Saludables</h3>
+                <p style="color: var(--text-light); margin-bottom: 15px;">Porciones equivalentes a 1 cucharada de aceite (≈14g grasa)</p>
+                <div class="alternatives-grid">
+                    <div class="alternative-card" style="background: #F0FFFF;">
+                        <div class="alternative-header" style="font-size: 1rem;">En lugar de 1 cda aceite, usa:</div>
+                        <div class="alternative-item">
+                            <span class="alternative-name">🥑 Aguacate</span>
+                            <span class="alternative-info"><strong>⅓ unidad mediana</strong> (70g)</span>
+                        </div>
+                        <div class="alternative-item">
+                            <span class="alternative-name">🥜 Almendras</span>
+                            <span class="alternative-info"><strong>20 unidades</strong> (25g)</span>
+                        </div>
+                        <div class="alternative-item">
+                            <span class="alternative-name">🌰 Nueces</span>
+                            <span class="alternative-info"><strong>7 mitades</strong> (20g)</span>
+                        </div>
+                        <div class="alternative-item">
+                            <span class="alternative-name">🥜 Maní tostado</span>
+                            <span class="alternative-info"><strong>30 unidades</strong> (30g)</span>
+                        </div>
+                        <div class="alternative-item">
+                            <span class="alternative-name">🌻 Semillas de girasol</span>
+                            <span class="alternative-info"><strong>2 cucharadas</strong> (20g)</span>
+                        </div>
+                        <div class="alternative-item">
+                            <span class="alternative-name">🎃 Semillas de ayote</span>
+                            <span class="alternative-info"><strong>2 cucharadas</strong> (25g)</span>
+                        </div>
+                        <div class="alternative-item">
+                            <span class="alternative-name">🥜 Mantequilla de maní</span>
+                            <span class="alternative-info"><strong>1½ cucharadas</strong> (25g)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Vegetales Libres -->
+            <div style="background: white; padding: 25px; border-radius: 15px; margin-bottom: 20px; box-shadow: var(--shadow);">
+                <h3 style="color: var(--accent-color); margin-bottom: 15px;">🥬 Vegetales de Consumo Libre</h3>
+                <p style="color: var(--text-light); margin-bottom: 15px;">Puedes consumir estos vegetales en cantidades generosas (mínimo 1 taza)</p>
+                <div class="alternatives-grid">
+                    <div class="alternative-card" style="background: #F0FFF0;">
+                        <div class="alternative-header" style="font-size: 1rem;">Vegetales bajos en calorías:</div>
+                        <div class="alternative-item">
+                            <span class="alternative-name">🥬 Lechuga, espinaca, acelga</span>
+                            <span class="alternative-info">2-3 tazas crudas</span>
+                        </div>
+                        <div class="alternative-item">
+                            <span class="alternative-name">🥒 Pepino</span>
+                            <span class="alternative-info">1 unidad completa</span>
+                        </div>
+                        <div class="alternative-item">
+                            <span class="alternative-name">🥦 Brócoli, coliflor</span>
+                            <span class="alternative-info">1-2 tazas cocidas</span>
+                        </div>
+                        <div class="alternative-item">
+                            <span class="alternative-name">🫑 Chile dulce, tomate</span>
+                            <span class="alternative-info">1-2 unidades</span>
+                        </div>
+                        <div class="alternative-item">
+                            <span class="alternative-name">🥕 Zanahoria cruda</span>
+                            <span class="alternative-info">1 taza rallada</span>
+                        </div>
+                        <div class="alternative-item">
+                            <span class="alternative-name">🥬 Repollo</span>
+                            <span class="alternative-info">2 tazas rallado</span>
+                        </div>
+                        <div class="alternative-item">
+                            <span class="alternative-name">🥒 Chayote, güisquil</span>
+                            <span class="alternative-info">1 taza cocido</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Guía Rápida de Sustitución -->
+            <div style="background: linear-gradient(135deg, var(--primary-color), #A06EA3); color: white; padding: 25px; border-radius: 15px; box-shadow: var(--shadow);">
+                <h3 style="margin-bottom: 15px;">📋 Guía Rápida de Sustitución</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px;">
+                    <div style="background: rgba(255,255,255,0.2); padding: 15px; border-radius: 10px; backdrop-filter: blur(10px);">
+                        <h4>Desayuno típico:</h4>
+                        <p>Si no hay huevos → usa 120g queso fresco<br>
+                        Si no hay pan → usa 2 tortillas o ½ taza avena</p>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.2); padding: 15px; border-radius: 10px; backdrop-filter: blur(10px);">
+                        <h4>Almuerzo/Cena:</h4>
+                        <p>Si no hay pollo → usa 1½ tazas frijoles<br>
+                        Si no hay arroz → usa 1 papa mediana</p>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.2); padding: 15px; border-radius: 10px; backdrop-filter: blur(10px);">
+                        <h4>Refrigerios:</h4>
+                        <p>Si no hay almendras → usa 30 maníes<br>
+                        Si no hay yogurt → usa ½ taza leche</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Stats Section -->
+        <div id="stats" class="content-section">
+            <h2 style="margin-bottom: 20px; color: var(--primary-color);">Resumen Nutricional</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-value">1,600</div>
+                    <div class="stat-label">Calorías Totales</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">160g</div>
+                    <div class="stat-label">Carbohidratos</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">120g</div>
+                    <div class="stat-label">Proteínas</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">53g</div>
+                    <div class="stat-label">Grasas</div>
+                </div>
+            </div>
+
+            <div class="progress-container">
+                <h3>Distribución de Macronutrientes</h3>
+                <div style="margin-top: 15px;">
+                    <p>Carbohidratos (40%)</p>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 40%; background: var(--carbs-color);"></div>
+                    </div>
+                </div>
+                <div style="margin-top: 10px;">
+                    <p>Proteínas (30%)</p>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 30%; background: var(--protein-color);"></div>
+                    </div>
+                </div>
+                <div style="margin-top: 10px;">
+                    <p>Grasas (30%)</p>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 30%; background: var(--fats-color);"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Portions Guide Section -->
+        <div id="portions" class="content-section">
+            <h2 style="margin-bottom: 20px; color: var(--primary-color);">Guía Manual de Porciones</h2>
+            <div class="alternatives-grid">
+                <div class="alternative-card">
+                    <div class="alternative-header">🖐️ Tu Mano como Medida</div>
+                    <div class="alternative-item">
+                        <span class="alternative-name">1 Palma</span>
+                        <span class="alternative-info">1 porción de proteína</span>
+                    </div>
+                    <div class="alternative-item">
+                        <span class="alternative-name">1 Puño</span>
+                        <span class="alternative-info">1 porción de vegetales</span>
+                    </div>
+                    <div class="alternative-item">
+                        <span class="alternative-name">1 Mano ahuecada</span>
+                        <span class="alternative-info">1 porción de carbohidratos</span>
+                    </div>
+                    <div class="alternative-item">
+                        <span class="alternative-name">1 Pulgar</span>
+                        <span class="alternative-info">1 porción de grasas</span>
+                    </div>
+                </div>
+
+                <div class="alternative-card">
+                    <div class="alternative-header">📏 Medidas Específicas</div>
+                    <div class="alternative-item">
+                        <span class="alternative-name">Pasta cocida</span>
+                        <span class="alternative-info">1/2 taza</span>
+                    </div>
+                    <div class="alternative-item">
+                        <span class="alternative-name">Arroz cocido</span>
+                        <span class="alternative-info">1/2 taza</span>
+                    </div>
+                    <div class="alternative-item">
+                        <span class="alternative-name">Carne/Pescado</span>
+                        <span class="alternative-info">90-100g (3 oz)</span>
+                    </div>
+                    <div class="alternative-item">
+                        <span class="alternative-name">Frutos secos</span>
+                        <span class="alternative-info">30g (1 oz)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal" id="mealModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle">Detalles de la Comida</h2>
+                <span class="modal-close" onclick="closeModal()">&times;</span>
+            </div>
+            <div id="modalBody">
+                <!-- Dynamic content -->
+            </div>
+        </div>
+    </div>
+
+    <!-- FAB -->
+    <div class="fab" onclick="showTips()">
+        💡
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
