@@ -1,0 +1,25 @@
+{
+  "name": "plan-nutricional-leticia",
+  "version": "1.0.0",
+  "description": "Plan nutricional interactivo para Leticia Díaz - 1600 kcal con sistema de equivalencias",
+  "main": "index.html",
+  "scripts": {
+    "start": "open index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kevillo/plan-nutricional-leticia.git"
+  },
+  "keywords": [
+    "nutrition",
+    "meal-plan",
+    "health",
+    "diet"
+  ],
+  "author": "Kevin Garcia",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kevillo/plan-nutricional-leticia/issues"
+  },
+  "homepage": "https://kevillo.github.io/plan-nutricional-leticia/"
+}
