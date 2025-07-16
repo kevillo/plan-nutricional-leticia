@@ -16,6 +16,7 @@ Aplicación web interactiva para visualizar y gestionar un plan nutricional pers
 - **Carbohidratos**: Opciones equivalentes a arroz y otros almidones
 - **Grasas**: Sustitutos saludables con porciones precisas
 - **Vegetales**: Lista de opciones de consumo libre
+- **🆕 Refrigerios**: 4 categorías de alternativas saludables con porciones exactas
 
 ### Características Adicionales
 - Guía de porciones usando la mano como referencia
@@ -45,6 +46,13 @@ cd plan-nutricional-leticia
 - **Grasas**: 30% (53g)
 - **Total**: 1,600 kcal
 
+## 🍿 Nuevas Alternativas de Refrigerios
+La aplicación ahora incluye 4 categorías de refrigerios saludables:
+1. **Frutos Secos**: Almendras, pistachos, marañón, maní
+2. **Lácteos + Fruta**: Yogurt, queso, leche con frutas
+3. **Vegetales + Proteína**: Zanahoria con hummus, pepino con atún
+4. **Opciones Económicas**: Banano con maní, aguacate, elote
+
 ## 🎨 Paleta de Colores
 - Primary: `#8B5A8E` (Morado)
 - Secondary: `#D4A574` (Dorado)
@@ -60,3 +68,6 @@ Folio de colegiada: 1118-0319-0085
 
 ## 📄 Licencia
 Este proyecto es de uso personal para el paciente especificado.
+
+---
+*Última actualización: 16 de Julio 2025 - Añadidas alternativas de refrigerios*
