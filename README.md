@@ -18,6 +18,13 @@ Aplicación web interactiva para visualizar y gestionar un plan nutricional pers
 - **Vegetales**: Lista de opciones de consumo libre
 - **🆕 Refrigerios**: 4 categorías de alternativas saludables con porciones exactas
 
+### 🎯 Módulo de Promociones
+- **Ofertas de la Semana**: Descuentos especiales en proteínas y vegetales
+- **Promociones de Temporada**: Frutas frescas y frutos secos con beneficios nutricionales
+- **Tips Nutricionales**: Consejos motivacionales y recetas rápidas
+- **Tiendas Recomendadas**: Supermercados y tiendas especializadas
+- **Opciones Económicas**: Alternativas de comidas saludables a bajo costo
+
 ### Características Adicionales
 - Guía de porciones usando la mano como referencia
 - Estadísticas nutricionales con visualización de progreso
@@ -53,6 +60,14 @@ La aplicación ahora incluye 4 categorías de refrigerios saludables:
 3. **Vegetales + Proteína**: Zanahoria con hummus, pepino con atún
 4. **Opciones Económicas**: Banano con maní, aguacate, elote
 
+## 🎯 Módulo de Promociones
+El nuevo módulo incluye contenido promocional para apoyar el plan nutricional:
+- **Ofertas Semanales**: Descuentos en proteínas (pollo, pescado, huevos) y vegetales frescos
+- **Promociones de Temporada**: Frutas de temporada con beneficios nutricionales destacados
+- **Tips Nutricionales**: Consejos motivacionales y recetas rápidas de 3-7 minutos
+- **Tiendas Recomendadas**: Directorio de supermercados y tiendas especializadas
+- **Opciones Económicas**: Comidas saludables de bajo costo (menos de $2.00)
+
 ## 🎨 Paleta de Colores
 - Primary: `#8B5A8E` (Morado)
 - Secondary: `#D4A574` (Dorado)
@@ -70,4 +85,4 @@ Folio de colegiada: 1118-0319-0085
 Este proyecto es de uso personal para el paciente especificado.
 
 ---
-*Última actualización: 16 de Julio 2025 - Añadidas alternativas de refrigerios*
+*Última actualización: 17 de Julio 2025 - Añadido módulo de promociones con ofertas saludables*
