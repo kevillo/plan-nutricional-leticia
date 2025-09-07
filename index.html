@@ -27,6 +27,7 @@
                         <strong>Grasas:</strong> 30% (53g)
                     </div>
                 </div>
+                <button class="logout-btn" onclick="logout()" id="logoutBtn" style="display: none;">Cerrar Sesión</button>
             </div>
         </div>
 
@@ -423,6 +424,35 @@
     <!-- FAB -->
     <div class="fab" onclick="showTips()">
         💡
+    </div>
+
+    <!-- Login Modal -->
+    <div class="login-overlay" id="loginOverlay">
+        <div class="login-modal">
+            <div class="login-header">
+                <h2>🔐 Acceso al Plan Nutricional</h2>
+                <p>Ingrese sus credenciales para acceder</p>
+            </div>
+            <form class="login-form" id="loginForm">
+                <div class="login-field">
+                    <label for="username">Usuario:</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="login-field">
+                    <label for="password">Contraseña:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <div class="login-error" id="loginError" style="display: none;">
+                    Credenciales incorrectas. Inténtelo de nuevo.
+                </div>
+                <button type="submit" class="login-btn">Iniciar Sesión</button>
+            </form>
+            <div class="login-footer">
+                <p><strong>Lic. Karla Andrea Argeñal</strong><br>
+                Nutricionista Certificada<br>
+                Folio: 1118-0319-0085</p>
+            </div>
+        </div>
     </div>
 
     <script src="script.js"></script>

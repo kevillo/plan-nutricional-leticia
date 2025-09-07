@@ -1,3 +1,138 @@
+// Authentication system
+const AUTH_CONFIG = {
+    username: 'leticia',
+    password: 'nutri2024'
+};
+
+// Check authentication status on page load
+document.addEventListener('DOMContentLoaded', function() {
+    checkAuthentication();
+    initializeLoginForm();
+});
+
+function checkAuthentication() {
+    const isAuthenticated = localStorage.getItem('plan_nutricional_auth') === 'true';
+    const loginOverlay = document.getElementById('loginOverlay');
+    const logoutBtn = document.getElementById('logoutBtn');
+    const mainContainer = document.querySelector('.container');
+    
+    if (!isAuthenticated) {
+        // Show login overlay
+        loginOverlay.style.display = 'flex';
+        // Hide main content except header
+        hideMainContent();
+    } else {
+        // Hide login overlay
+        loginOverlay.style.display = 'none';
+        // Show logout button
+        logoutBtn.style.display = 'block';
+        // Show main content
+        showMainContent();
+        // Initialize the meal plan display
+        generateCalendar();
+    }
+}
+
+function hideMainContent() {
+    const mainSections = ['.tabs', '#calendar', '#alternatives', '#stats', '#portions', '.fab'];
+    mainSections.forEach(selector => {
+        const element = document.querySelector(selector);
+        if (element) {
+            element.style.display = 'none';
+        }
+    });
+    document.getElementById('logoutBtn').style.display = 'none';
+}
+
+function showMainContent() {
+    const mainSections = ['.tabs', '#calendar', '.fab'];
+    mainSections.forEach(selector => {
+        const element = document.querySelector(selector);
+        if (element) {
+            element.style.display = '';
+        }
+    });
+    // Show the active tab content
+    const activeSection = document.querySelector('.content-section.active');
+    if (activeSection) {
+        activeSection.style.display = 'block';
+    }
+}
+
+function initializeLoginForm() {
+    const loginForm = document.getElementById('loginForm');
+    if (loginForm) {
+        loginForm.addEventListener('submit', handleLogin);
+    }
+}
+
+function handleLogin(event) {
+    event.preventDefault();
+    
+    const username = document.getElementById('username').value.trim();
+    const password = document.getElementById('password').value;
+    const errorDiv = document.getElementById('loginError');
+    
+    // Hide previous error
+    errorDiv.style.display = 'none';
+    
+    // Validate credentials
+    if (username === AUTH_CONFIG.username && password === AUTH_CONFIG.password) {
+        // Set authentication status
+        localStorage.setItem('plan_nutricional_auth', 'true');
+        
+        // Hide login overlay with animation
+        const loginOverlay = document.getElementById('loginOverlay');
+        loginOverlay.style.animation = 'fadeOut 0.3s ease';
+        
+        setTimeout(() => {
+            checkAuthentication();
+        }, 300);
+        
+    } else {
+        // Show error message
+        errorDiv.style.display = 'block';
+        
+        // Clear password field
+        document.getElementById('password').value = '';
+        
+        // Add shake animation
+        const loginModal = document.querySelector('.login-modal');
+        loginModal.style.animation = 'shake 0.5s ease';
+        setTimeout(() => {
+            loginModal.style.animation = '';
+        }, 500);
+    }
+}
+
+function logout() {
+    // Clear authentication status
+    localStorage.removeItem('plan_nutricional_auth');
+    
+    // Clear form
+    document.getElementById('username').value = '';
+    document.getElementById('password').value = '';
+    
+    // Check authentication (will show login)
+    checkAuthentication();
+}
+
+// Add CSS animations
+const style = document.createElement('style');
+style.textContent = `
+    @keyframes fadeOut {
+        from { opacity: 1; }
+        to { opacity: 0; }
+    }
+    
+    @keyframes shake {
+        0%, 100% { transform: translateX(0); }
+        10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+        20%, 40%, 60%, 80% { transform: translateX(5px); }
+    }
+`;
+document.head.appendChild(style);
+
 // Meal plan data
 const mealPlan = {
     lunes: {
@@ -169,8 +304,10 @@ const dayNames = {
 };
 
 // Initialize calendar
-function initCalendar() {
+function generateCalendar() {
     const calendarGrid = document.getElementById('calendarGrid');
+    if (!calendarGrid) return;
+    
     calendarGrid.innerHTML = '';
 
     daysOfWeek.forEach(day => {
@@ -289,10 +426,8 @@ function showTips() {
     alert(randomTip);
 }
 
-// Initialize on load
-window.onload = function() {
-    initCalendar();
-};
+// Initialize on load - now handled by authentication system
+// The generateCalendar() function is called from checkAuthentication() after login
 
 // Close modal when clicking outside
 window.onclick = function(event) {
