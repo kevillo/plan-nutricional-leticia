@@ -34,8 +34,9 @@ function checkAuthentication() {
 }
 
 function hideMainContent() {
-    const mainSections = ['.tabs', '#calendar', '#alternatives', '#stats', '#portions', '.fab'];
-    mainSections.forEach(selector => {
+    // Hide all main content sections except header
+    const sectionsToHide = ['.tabs', '#calendar', '#alternatives', '#stats', '#portions', '.fab'];
+    sectionsToHide.forEach(selector => {
         const element = document.querySelector(selector);
         if (element) {
             element.style.display = 'none';
@@ -45,17 +46,31 @@ function hideMainContent() {
 }
 
 function showMainContent() {
-    const mainSections = ['.tabs', '#calendar', '.fab'];
-    mainSections.forEach(selector => {
-        const element = document.querySelector(selector);
-        if (element) {
-            element.style.display = '';
-        }
+    // Only show the tabs and calendar by default
+    document.querySelector('.tabs').style.display = '';
+    document.querySelector('.fab').style.display = '';
+    
+    // Make sure the calendar section is active by default
+    document.querySelectorAll('.content-section').forEach(section => {
+        section.style.display = 'none';
+        section.classList.remove('active');
     });
-    // Show the active tab content
-    const activeSection = document.querySelector('.content-section.active');
-    if (activeSection) {
-        activeSection.style.display = 'block';
+    
+    // Show calendar by default
+    const calendarSection = document.getElementById('calendar');
+    if (calendarSection) {
+        calendarSection.style.display = 'block';
+        calendarSection.classList.add('active');
+    }
+    
+    // Make sure the first tab is active
+    document.querySelectorAll('.tab').forEach(tab => {
+        tab.classList.remove('active');
+    });
+    
+    const firstTab = document.querySelector('.tab');
+    if (firstTab) {
+        firstTab.classList.add('active');
     }
 }
 
